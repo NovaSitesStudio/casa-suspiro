@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventos · Casa Suspiro</title>
+<meta name="description" content="Bizcochos y postres para cumpleaños, bodas y empresas. Repostería dominicana en Santo Domingo. Proyecto de demostración de Nova Sites Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="eventos">
+<div class="demo-bar"><strong>Proyecto de demostración</strong> · Tienda ficticia diseñada por Nova Sites Studio. No se procesan pagos reales.</div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html"><i aria-hidden="true"></i>Casa Suspiro</a>
+    <nav aria-label="Principal" class="menu-wrap" style="display:contents"><ul class="menu"><li><a href="index.html">Inicio</a></li><li><a href="tienda.html">Tienda</a></li><li><a href="eventos.html" aria-current="page">Eventos</a></li><li><a href="seguimiento.html">Rastrear pedido</a></li><li><a href="ayuda.html">Ayuda</a></li></ul></nav>
+    <div class="iconos">
+      <button class="icono-btn" type="button" data-buscar aria-label="Buscar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="icono-btn" href="tienda.html?fav=1" aria-label="Mis favoritos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span class="contador" data-contador="favs" hidden>0</span></a>
+      <button class="icono-btn" type="button" data-abrir-carrito aria-label="Abrir carrito"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="contador" data-contador="carrito" hidden>0</span></button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="menu-movil" id="menu-movil" aria-label="Menú" hidden><a href="index.html">Inicio</a><a href="tienda.html">Tienda</a><a href="eventos.html" aria-current="page">Eventos</a><a href="seguimiento.html">Rastrear pedido</a><a href="ayuda.html">Ayuda</a></nav>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div>
+    <p class="eyebrow entra" style="--d:0">Pedidos especiales</p>
+    <h1 class="entra" style="--d:1">Dulces para <em>tu celebración</em>.</h1>
+    <p class="entra" style="--d:2">Bizcochos de pisos, mesas de postres y bandejas de picaderas para cumpleaños, bodas, baby showers y empresas.</p>
+    <div class="acciones entra" style="--d:3">
+      <a class="btn btn-cereza" href="#cotizar">Pedir cotización <span class="flecha" aria-hidden="true">→</span></a>
+      <a class="btn btn-borde" href="tienda.html">Ver la tienda</a>
+    </div>
+    <div class="ventajas entra" style="--d:4"><span>Cotización gratis</span><span>Respuesta en 24 horas</span><span>Factura con comprobante fiscal</span></div>
+  </div>
+  <div class="hero-media entra" style="--d:2">
+    <figure class="foto" data-label="Mesa de postres para eventos"><img src="images/eventos.jpg" alt="Mesa de postres para un evento" fetchpriority="high"></figure>
+    <div class="hero-sello"><b>+ de 300</b><span>eventos al año</span></div>
+  </div>
+</section>
+
+<section class="seccion rosa">
+  <div class="wrap">
+    <div class="sec-tit revela"><div><p class="eyebrow">Lo que hacemos</p><h2>Para cada ocasión</h2></div></div>
+    <div class="tipos">
+      <article class="tipo revela"><div class="ico" aria-hidden="true">🎂</div><h3>Cumpleaños</h3><p>Bizcochos de 1 a 10 libras con el diseño, los colores y el mensaje que quieras.</p></article>
+      <article class="tipo revela" style="--d:1"><div class="ico" aria-hidden="true">💍</div><h3>Bodas</h3><p>Bizcochos de pisos, mesa de postres y suspiro a juego con tu decoración.</p></article>
+      <article class="tipo revela" style="--d:2"><div class="ico" aria-hidden="true">🍼</div><h3>Baby shower</h3><p>Cupcakes, bentos y bizcocho en los colores del evento. También bautizos.</p></article>
+      <article class="tipo revela" style="--d:3"><div class="ico" aria-hidden="true">💼</div><h3>Empresas</h3><p>Bandejas de picaderas y postres para reuniones, con factura y comprobante fiscal.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="cotizar">
+  <div class="wrap estrecho">
+    <div class="sec-tit revela"><div><p class="eyebrow">Cotización gratis</p><h2>Cuéntanos de tu evento</h2><p>Te respondemos por WhatsApp en menos de 24 horas con el precio y las opciones.</p></div></div>
+    <form class="paso revela" id="form-evento" novalidate>
+      <div class="dos-col">
+        <div class="campo"><label for="ev-tipo">Tipo de evento</label>
+          <select id="ev-tipo" required><option value="">Elige uno</option><option>Cumpleaños</option><option>Boda</option><option>Baby shower</option><option>Bautizo</option><option>Empresa</option><option>Otro</option></select></div>
+        <div class="campo"><label for="ev-fecha">Fecha del evento</label><input id="ev-fecha" type="date" required><span class="ayuda">Con al menos una semana de anticipación.</span></div>
+        <div class="campo"><label for="ev-inv">Cantidad de invitados</label><input id="ev-inv" type="number" min="10" inputmode="numeric" placeholder="Ej.: 40" required></div>
+        <div class="campo"><label for="ev-pres">Presupuesto aproximado</label>
+          <select id="ev-pres"><option>No estoy seguro</option><option>Menos de RD$ 5,000</option><option>RD$ 5,000 – 15,000</option><option>RD$ 15,000 – 30,000</option><option>Más de RD$ 30,000</option></select></div>
+        <div class="campo"><label for="ev-nombre">Nombre</label><input id="ev-nombre" autocomplete="name" required></div>
+        <div class="campo"><label for="ev-tel">WhatsApp</label><input id="ev-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="809 555 1234" required></div>
+        <div class="campo ancho"><label for="ev-det">Cuéntanos tu idea</label><textarea id="ev-det" placeholder="Colores, tema, sabores, si quieres mesa de postres…"></textarea></div>
+      </div>
+      <p class="msg" role="alert" style="margin-top:12px"></p>
+      <button class="btn btn-cereza btn-ancho" type="submit">Pedir cotización</button>
+    </form>
+    <div class="confirmado" id="evento-ok" hidden>
+      <div class="sello" aria-hidden="true">✓</div>
+      <h2>¡Recibimos tu solicitud!</h2>
+      <p>En la página real, la repostera recibe estos datos y te escribe por WhatsApp con la cotización.</p>
+      <div class="acciones"><a class="btn btn-cereza" href="tienda.html">Ver la tienda</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-cols">
+      <div>
+        <a class="logo" href="index.html"><i aria-hidden="true"></i>Casa Suspiro</a>
+        <p>Repostería dominicana hecha cada mañana en Santo Domingo. Negocio ficticio creado como demostración.</p>
+        <div class="redes"><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">Instagram</a><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">Facebook</a><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">TikTok</a></div>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul><li><a href="tienda.html?cat=bizcochos">Bizcochos</a></li><li><a href="tienda.html?cat=postres">Postres</a></li><li><a href="tienda.html?cat=picaderas">Picaderas</a></li><li><a href="tienda.html?fav=1">Mis favoritos</a></li></ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul><li><a href="ayuda.html">Preguntas frecuentes</a></li><li><a href="ayuda.html#entregas">Entregas</a></li><li><a href="ayuda.html#pagos">Pagos</a></li><li><a href="seguimiento.html">Rastrear pedido</a></li><li><a href="eventos.html">Pedidos para eventos</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Av. Ficticia 27, Santo Domingo</li><li>Lun – Sáb: 8:00 am – 7:00 pm</li><li>Domingo: 9:00 am – 2:00 pm</li><li><a href="#" data-demo="En la tienda real, esto abre el WhatsApp de Casa Suspiro.">WhatsApp (809) 555-0127</a></li></ul>
+      </div>
+    </div>
+    <div class="pie-bajo">
+      <span>© 2026 Casa Suspiro · Negocio ficticio</span>
+      <span>Transferencia · Efectivo · Tarjeta</span>
+      <span>Sitio de demostración por Nova Sites Studio</span>
+    </div>
+  </div>
+</footer>
+
+<div class="buscador" id="buscador" role="dialog" aria-label="Buscar productos" hidden>
+  <form action="tienda.html" role="search">
+    <label class="oculto" for="b-q">Buscar</label>
+    <input id="b-q" name="q" type="search" placeholder="¿Qué se te antoja? Bizcocho, flan, quipes…" autocomplete="off">
+    <button class="btn btn-cereza" type="submit">Buscar</button>
+  </form>
+  <div class="sugerencias"><span>Lo más buscado:</span><a href="tienda.html?q=bizcocho">Bizcocho</a><a href="tienda.html?q=flan">Flan</a><a href="tienda.html?q=cupcakes">Cupcakes</a><a href="tienda.html?q=picaderas">Picaderas</a></div>
+</div>
+
+<div class="panel-velo" id="panel-velo" data-cerrar-carrito></div>
+<aside class="panel" id="panel" aria-hidden="true" aria-label="Carrito">
+  <div class="panel-top">
+    <h2>Tu carrito</h2>
+    <button class="cerrar" type="button" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
+  </div>
+  <div class="lineas" id="lineas"></div>
+  <div class="panel-pie">
+    <div data-envio></div>
+    <div class="fila total"><span>Subtotal</span><span class="precio" data-subtotal>RD$ 0</span></div>
+    <p class="ayuda">Precios con ITBIS incluido. El envío se calcula al pagar.</p>
+    <div class="panel-btns"><a class="btn btn-borde" href="carrito.html">Ver carrito</a><a class="btn btn-cereza" href="checkout.html" data-ir-pagar>Pagar</a></div>
+  </div>
+</aside>
+<button class="wa" type="button" data-demo="En la tienda real, esto abre el WhatsApp de Casa Suspiro." aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1.1-.5-1.9-1.3-2.4-2.4l.9-1-1-2Z"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="tienda.js" defer></script>
+</body>
+</html>

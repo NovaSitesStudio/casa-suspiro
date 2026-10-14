@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar pedido · Casa Suspiro</title>
+<meta name="description" content="Repostería dominicana en Santo Domingo. Proyecto de demostración de Nova Sites Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="checkout">
+<div class="demo-bar"><strong>Proyecto de demostración</strong> · Tienda ficticia diseñada por Nova Sites Studio. No se procesan pagos reales.</div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html"><i aria-hidden="true"></i>Casa Suspiro</a>
+    <nav aria-label="Principal" class="menu-wrap" style="display:contents"><ul class="menu"><li><a href="index.html">Inicio</a></li><li><a href="tienda.html">Tienda</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="seguimiento.html">Rastrear pedido</a></li><li><a href="ayuda.html">Ayuda</a></li></ul></nav>
+    <div class="iconos">
+      <button class="icono-btn" type="button" data-buscar aria-label="Buscar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="icono-btn" href="tienda.html?fav=1" aria-label="Mis favoritos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span class="contador" data-contador="favs" hidden>0</span></a>
+      <a class="icono-btn" href="carrito.html" aria-label="Ver carrito"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="contador" data-contador="carrito" hidden>0</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="menu-movil" id="menu-movil" aria-label="Menú" hidden><a href="index.html">Inicio</a><a href="tienda.html">Tienda</a><a href="eventos.html">Eventos</a><a href="seguimiento.html">Rastrear pedido</a><a href="ayuda.html">Ayuda</a></nav>
+</header>
+
+<main>
+<div class="wrap" id="paso-pago">
+  <section class="cabecera">
+    <nav class="migas" aria-label="Ruta"><a href="carrito.html">Carrito</a><span>/</span><span aria-current="page">Entrega y pago</span></nav>
+    <h1>Finalizar pedido</h1>
+    <ol class="pasos-compra"><li class="hecho"><b>✓</b>Carrito</li><li class="activo"><b>2</b>Entrega y pago</li><li><b>3</b>Confirmación</li></ol>
+  </section>
+  <div class="checkout">
+    <div>
+      <div class="paso" id="vacio-aviso" hidden>
+        <div class="vacio"><div class="icono" aria-hidden="true">🧁</div><p>Tu carrito está vacío.</p><a class="btn btn-cereza" href="tienda.html">Ir a la tienda</a></div>
+      </div>
+      <form id="form-pago" novalidate>
+        <div class="paso">
+          <h2><b>1</b>Entrega</h2>
+          <div class="opciones-grandes">
+            <label><input type="radio" name="entrega" value="recoger" checked><span><strong>Recoger en tienda</strong><small>Gratis · Av. Ficticia 27, Santo Domingo</small></span></label>
+            <label><input type="radio" name="entrega" value="delivery"><span><strong>Delivery</strong><small>Desde RD$ 250 · gratis desde RD$ 5,000</small></span></label>
+          </div>
+          <div class="dos-col" style="margin-top:14px">
+            <div class="campo"><label for="fecha">Día</label><input id="fecha" name="fecha" type="date" required><span class="ayuda" id="fecha-ayuda"></span></div>
+            <div class="campo"><label for="hora">Hora</label>
+              <select id="hora" name="hora" required>
+                <option value="">Elige una hora</option>
+                <option>9:00 – 11:00 am</option><option>11:00 am – 1:00 pm</option>
+                <option>1:00 – 3:00 pm</option><option>3:00 – 5:00 pm</option><option>5:00 – 7:00 pm</option>
+              </select>
+            </div>
+            <div class="ancho dos-col" id="bloque-dir" hidden>
+              <div class="campo ancho"><label for="zona">Zona de entrega</label>
+                <select id="zona" name="zona" required>
+                  <option value="dn">Distrito Nacional · RD$ 250</option>
+                  <option value="sde">Santo Domingo Este · RD$ 350</option>
+                  <option value="sdo">Santo Domingo Oeste · RD$ 350</option>
+                  <option value="sdn">Santo Domingo Norte · RD$ 350</option>
+                </select>
+              </div>
+              <div class="campo ancho"><label for="direccion">Dirección</label><textarea id="direccion" name="direccion" placeholder="Calle, número, sector y una referencia" required></textarea></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paso">
+          <h2><b>2</b>Tus datos</h2>
+          <div class="dos-col">
+            <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" autocomplete="name" required></div>
+            <div class="campo"><label for="tel">WhatsApp</label><input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="809 555 1234" required><span class="ayuda">Te confirmamos el pedido por aquí.</span></div>
+            <div class="campo ancho"><label for="nota">Nota para la repostera (opcional)</label><textarea id="nota" name="nota" placeholder="Ej.: vela del número 5, factura con RNC…"></textarea></div>
+          </div>
+        </div>
+
+        <div class="paso">
+          <h2><b>3</b>Pago</h2>
+          <div class="opciones-grandes tres">
+            <label><input type="radio" name="pago" value="transferencia" checked><span><strong>Transferencia</strong><small>Te enviamos la cuenta</small></span></label>
+            <label><input type="radio" name="pago" value="efectivo"><span><strong>Efectivo</strong><small>Al recibir o recoger</small></span></label>
+            <label><input type="radio" name="pago" value="tarjeta"><span><strong>Tarjeta</strong><small>Enlace de pago seguro</small></span></label>
+          </div>
+          <p class="aviso-pago" style="margin-top:14px">Esto es una demostración: no se cobra nada ni se envía el pedido. En la tienda real, el pago con tarjeta se hace en una pasarela segura.</p>
+          <p class="msg" role="alert" style="margin-top:10px"></p>
+          <button class="btn btn-cereza btn-ancho" type="submit">Confirmar pedido</button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="resumen" aria-label="Resumen del pedido">
+      <h2>Tu pedido</h2>
+      <div class="lineas" id="resumen-lineas"></div>
+      <div class="fila"><span>Subtotal</span><span id="r-sub">RD$ 0</span></div>
+      <div class="fila desc" id="r-desc-fila" hidden><span>Descuento</span><span id="r-desc"></span></div>
+      <div class="fila"><span>Envío</span><span id="r-envio">Recoges en tienda</span></div>
+      <div class="fila total"><span>Total</span><span id="r-total">RD$ 0</span></div>
+      <p class="ayuda">Precios con ITBIS incluido. <a href="carrito.html">Editar carrito</a></p>
+    </aside>
+  </div>
+</div>
+
+<section class="wrap confirmado" id="confirmado" hidden>
+  <div class="sello" aria-hidden="true">✓</div>
+  <ol class="pasos-compra"><li class="hecho"><b>✓</b>Carrito</li><li class="hecho"><b>✓</b>Entrega y pago</li><li class="activo"><b>3</b>Confirmación</li></ol>
+  <h1>¡Pedido recibido!</h1>
+  <p>Tu número de pedido es</p>
+  <p class="num" id="num-pedido">CS-0000</p>
+  <p>Total: <strong id="total-final">RD$ 0</strong>. En la tienda real te escribiríamos por WhatsApp para confirmar.</p>
+  <div class="acciones"><a class="btn btn-cereza" id="ir-rastreo" href="seguimiento.html">Rastrear mi pedido</a><a class="btn btn-borde" href="index.html">Volver al inicio</a></div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-cols">
+      <div>
+        <a class="logo" href="index.html"><i aria-hidden="true"></i>Casa Suspiro</a>
+        <p>Repostería dominicana hecha cada mañana en Santo Domingo. Negocio ficticio creado como demostración.</p>
+        <div class="redes"><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">Instagram</a><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">Facebook</a><a href="#" data-demo="En la tienda real, esto abre la red social del negocio.">TikTok</a></div>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul><li><a href="tienda.html?cat=bizcochos">Bizcochos</a></li><li><a href="tienda.html?cat=postres">Postres</a></li><li><a href="tienda.html?cat=picaderas">Picaderas</a></li><li><a href="tienda.html?fav=1">Mis favoritos</a></li></ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul><li><a href="ayuda.html">Preguntas frecuentes</a></li><li><a href="ayuda.html#entregas">Entregas</a></li><li><a href="ayuda.html#pagos">Pagos</a></li><li><a href="seguimiento.html">Rastrear pedido</a></li><li><a href="eventos.html">Pedidos para eventos</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Av. Ficticia 27, Santo Domingo</li><li>Lun – Sáb: 8:00 am – 7:00 pm</li><li>Domingo: 9:00 am – 2:00 pm</li><li><a href="#" data-demo="En la tienda real, esto abre el WhatsApp de Casa Suspiro.">WhatsApp (809) 555-0127</a></li></ul>
+      </div>
+    </div>
+    <div class="pie-bajo">
+      <span>© 2026 Casa Suspiro · Negocio ficticio</span>
+      <span>Transferencia · Efectivo · Tarjeta</span>
+      <span>Sitio de demostración por Nova Sites Studio</span>
+    </div>
+  </div>
+</footer>
+
+<div class="buscador" id="buscador" role="dialog" aria-label="Buscar productos" hidden>
+  <form action="tienda.html" role="search">
+    <label class="oculto" for="b-q">Buscar</label>
+    <input id="b-q" name="q" type="search" placeholder="¿Qué se te antoja? Bizcocho, flan, quipes…" autocomplete="off">
+    <button class="btn btn-cereza" type="submit">Buscar</button>
+  </form>
+  <div class="sugerencias"><span>Lo más buscado:</span><a href="tienda.html?q=bizcocho">Bizcocho</a><a href="tienda.html?q=flan">Flan</a><a href="tienda.html?q=cupcakes">Cupcakes</a><a href="tienda.html?q=picaderas">Picaderas</a></div>
+</div>
+
+<button class="wa" type="button" data-demo="En la tienda real, esto abre el WhatsApp de Casa Suspiro." aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1.1-.5-1.9-1.3-2.4-2.4l.9-1-1-2Z"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="tienda.js" defer></script>
+</body>
+</html>
